@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 gem 'mysql2'
 gem 'devise'
 gem 'riak-client'
-gem 'oauth'
+gem 'oauth2'
 
 # Front-end
 gem 'haml'
