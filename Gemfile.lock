@@ -1,3 +1,12 @@
+GIT
+  remote: ssh://git@diegorubin.com/bazar-auth-plugin.git
+  revision: ced868109f396e4ae05c79dc853718d083792aa6
+  branch: master
+  specs:
+    bazar-auth-plugin (0.0.1)
+      oauth2 (= 0.9.3)
+      rails (~> 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,6 +207,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-fsevent
+  bazar-auth-plugin!
   capistrano
   debugger
   devise

@@ -6,6 +6,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'riak-client'
 gem 'oauth2'
+gem 'bazar-auth-plugin', :git => 'ssh://git@diegorubin.com/bazar-auth-plugin.git', :branch => 'master'
 
 # Front-end
 gem 'haml'
