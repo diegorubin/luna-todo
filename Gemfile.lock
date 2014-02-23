@@ -1,9 +1,10 @@
 GIT
   remote: ssh://git@diegorubin.com/bazar-auth-plugin.git
-  revision: ced868109f396e4ae05c79dc853718d083792aa6
-  branch: master
+  revision: 34cc2ca2e49e6b68d7a17322f0caa236b1c048c5
   specs:
-    bazar-auth-plugin (0.0.1)
+    bazar (0.0.1.1)
+      faraday (~> 0.9.0)
+      figaro (~> 0.7.0)
       oauth2 (= 0.9.3)
       rails (~> 4.0.0)
 
@@ -41,7 +42,9 @@ GEM
       ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.9)
       sys-uname
-    bcrypt-ruby (3.1.2)
+    bcrypt (3.1.6)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
     beefcake (0.3.7)
     builder (3.1.4)
     capistrano (3.1.0)
@@ -57,7 +60,7 @@ GEM
       debugger-ruby_core_source (~> 1.3.1)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.3.1)
-    devise (3.2.2)
+    devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -75,6 +78,9 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -109,7 +115,7 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     orm_adapter (0.5.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -146,7 +152,7 @@ GEM
     rspec-core (2.14.7)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.5)
+    rspec-mocks (2.14.6)
     rspec-rails (2.14.1)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
@@ -165,7 +171,7 @@ GEM
     simplecov-rcov (0.2.3)
       simplecov (>= 0.4.1)
     slop (3.4.7)
-    sprockets (2.10.1)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -207,7 +213,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-fsevent
-  bazar-auth-plugin!
+  bazar!
   capistrano
   debugger
   devise
