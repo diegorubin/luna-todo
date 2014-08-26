@@ -1,8 +1,8 @@
 GIT
-  remote: ssh://git@diegorubin.com/bazar-auth-plugin.git
+  remote: ssh://git@diegorubin.com/luna-key.git
   revision: 34cc2ca2e49e6b68d7a17322f0caa236b1c048c5
   specs:
-    bazar (0.0.1.1)
+    luna (0.0.1.1)
       faraday (~> 0.9.0)
       figaro (~> 0.7.0)
       oauth2 (= 0.9.3)
@@ -213,7 +213,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   autotest-fsevent
-  bazar!
+  luna!
   capistrano
   debugger
   devise

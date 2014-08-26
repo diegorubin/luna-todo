@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BazarToDo::Application.config.secret_key_base = '63868025712c0dd5e687dfd561ceed07c180c90426fa4cd4ea842c3ac829d1d393f12524a7774678f5528061bb861e497b07070aff7ab5095e59c5563dcb9187'
+LunaToDo::Application.config.secret_key_base = '63868025712c0dd5e687dfd561ceed07c180c90426fa4cd4ea842c3ac829d1d393f12524a7774678f5528061bb861e497b07070aff7ab5095e59c5563dcb9187'

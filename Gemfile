@@ -6,7 +6,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'riak-client'
 gem 'oauth2'
-gem 'bazar', :git => 'ssh://git@diegorubin.com/bazar-auth-plugin.git'
+gem 'luna', :git => 'ssh://git@diegorubin.com/luna-key.git'
 
 # Front-end
 gem 'haml'
