@@ -17,7 +17,6 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'thin'
   gem 'capistrano'
-  gem 'debugger'
   gem 'rspec-rails', '~> 2.0'
   gem 'simplecov', '0.7.1'
   gem 'simplecov-rcov'
