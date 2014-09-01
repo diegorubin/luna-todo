@@ -1,6 +1,6 @@
 GIT
   remote: ssh://git@github.com/diegorubin/luna-key.git
-  revision: 67cc75023315a2f998f42833b61f7e2f6302f18a
+  revision: e0351d242a27494810479df2b9d3010833a40b5d
   specs:
     luna (0.0.1.1)
       faraday_middleware
@@ -42,7 +42,6 @@ GEM
     autotest-fsevent (0.2.9)
       sys-uname
     bcrypt (3.1.7)
-    beefcake (0.3.7)
     bson (2.3.0)
     builder (3.1.4)
     capistrano (3.2.1)
@@ -80,7 +79,6 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.11)
-    innertube (1.0.2)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -152,12 +150,6 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     redis (3.1.0)
-    riak-client (1.4.4.1)
-      beefcake (~> 0.3.7)
-      builder (>= 2.1.2)
-      i18n (>= 0.4.0)
-      innertube (~> 1.0.2)
-      multi_json (~> 1.0)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.2)
@@ -238,7 +230,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.0.2)
   redis
-  riak-client
   rspec-rails (~> 2.0)
   sdoc
   simplecov (= 0.7.1)
