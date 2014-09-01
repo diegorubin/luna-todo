@@ -8,6 +8,12 @@ gem 'riak-client'
 gem 'oauth2'
 gem 'luna', :git => 'ssh://git@github.com/diegorubin/luna-key.git'
 
+# database
+gem 'sqlite3'
+gem 'mongoid', '~> 4.0.0.rc2'
+gem 'mongo'
+gem 'redis'
+
 # Front-end
 gem 'haml'
 gem 'uglifier', '>= 1.3.0'
