@@ -20,13 +20,15 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 group :development do
+  gem 'guard'
+  gem 'guard-rspec'
+
   gem 'thin'
   gem 'capistrano'
   gem 'rspec-rails', '~> 2.0'
   gem 'simplecov', '0.7.1'
   gem 'simplecov-rcov'
-  gem 'autotest'
-  gem 'autotest-fsevent'
+
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-rails'

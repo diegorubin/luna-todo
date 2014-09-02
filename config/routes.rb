@@ -6,5 +6,12 @@ LunaToDo::Application.routes.draw do
   # Lists
   resources :lists
 
+  # Api
+  namespace :api do
+    namespace :v1 do
+      resources :list, only: ['create', 'update']
+    end
+  end
+
 end
 
