@@ -1,0 +1,32 @@
+!!!
+%html{:lang => "pt-BR"}
+  %head
+    %title= "#{yield(:title)} | Luna ToDo"
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %a.navbar-brand{:href => "#"} Luna ToDo
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{class: set_active('lists')}
+              %a{:href => root_path}= t('navebar.lists')
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown
+                %a.dropdown-toggle{href: "#", 'data-toggle' => :dropdown}
+                  Usuário
+                  %b.caret
+                %ul.dropdown-menu
+                  %li.divider
+                    %li=link_to(t('navebar.logout'), "", {method: 'delete'})
+        / /.nav-collapse
+    .container
+      .starter-template
+        = yield
+    / /.container
+
+  = javascript_include_tag 'application'
+
