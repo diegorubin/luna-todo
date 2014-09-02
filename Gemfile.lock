@@ -242,7 +242,6 @@ DEPENDENCIES
   mongo
   mongoid (~> 4.0.0.rc2)
   mysql2
-  oauth2
   pry
   pry-rails
   quiet_assets
