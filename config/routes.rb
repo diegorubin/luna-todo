@@ -13,5 +13,7 @@ LunaToDo::Application.routes.draw do
     end
   end
 
+  root to: 'lists#index'
+
 end
 

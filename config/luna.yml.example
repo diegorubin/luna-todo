@@ -1,9 +1,9 @@
 production:
-  host: localhost:3001
+  host: http://localhost:3001
 
 development:
-  host: localhost:3001
+  host: http://localhost:3001
 
 test:
-  host: localhost:3001
+  host: http://localhost:3001
 
