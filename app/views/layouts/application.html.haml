@@ -18,8 +18,15 @@
             %a{:href => "/"} Home
           %li
             %a{:href => "/lists"} Listas
+          %li
+            %a.open-overlay{:href => "/lists/new", 'data-overlay' => 'list'} Nova Lista
         %h3.text-muted Luna To Do
       = yield
       .footer
         %p © Lab Luna 2014
+
+    #list.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+
+  = javascript_include_tag "application"
+  = yield(:javascripts)
 
