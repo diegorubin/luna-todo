@@ -12,9 +12,11 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new(params[:list])
+    render layout: false
   end
 
   def edit
+    render layout: false
   end
 
   def destroy

@@ -1,32 +1,25 @@
 !!!
-%html{:lang => "pt-BR"}
+%html{:lang => "en"}
   %head
-    %title= "#{yield(:title)} | Luna ToDo"
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %link{:href => "../../favicon.ico", :rel => "icon"}/
+    %title Luna To Do
+    / Bootstrap core CSS
     = stylesheet_link_tag 'application', media: 'all'
-    = csrf_meta_tags
-
   %body
-    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-      .container
-        .navbar-header
-          %a.navbar-brand{:href => "#"} Luna ToDo
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li{class: set_active('lists')}
-              %a{:href => root_path}= t('navebar.lists')
-            %ul.nav.navbar-nav.navbar-right
-              %li.dropdown
-                %a.dropdown-toggle{href: "#", 'data-toggle' => :dropdown}
-                  Usuário
-                  %b.caret
-                %ul.dropdown-menu
-                  %li.divider
-                    %li=link_to(t('navebar.logout'), "", {method: 'delete'})
-        / /.nav-collapse
     .container
-      .starter-template
-        = yield
-    / /.container
-
-  = javascript_include_tag 'application'
+      .header
+        %ul.nav.nav-pills.pull-right
+          %li.active
+            %a{:href => "/"} Home
+          %li
+            %a{:href => "/lists"} Listas
+        %h3.text-muted Luna To Do
+      = yield
+      .footer
+        %p © Lab Luna 2014
 
