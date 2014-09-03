@@ -1,6 +1,11 @@
 class Api::V1::ListsController < ApiController
   before_filter :authenticate_luna_user!
 
+  def index
+    lists = List.where(owner: current_luna_user.id)
+    render json: {status: 'ok', lists: lists}
+  end
+
   def create
     list = List.new(list_params)
     list.owner = current_luna_user.id
