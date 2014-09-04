@@ -27,7 +27,7 @@ class Api::V1::ListsController < ApiController
 
   private
   def list_params
-    params.require(:list).permit(:title)
+    params.require(:list).permit(:title, :items_attributes => ['description', 'done', 'id', 'position'])
   end
 
 end

@@ -6,10 +6,10 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    %link{:href => "../../favicon.ico", :rel => "icon"}/
     %title Luna To Do
     / Bootstrap core CSS
     = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
   %body
     .container
       .header

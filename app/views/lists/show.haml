@@ -3,8 +3,12 @@
   %h1
     = @list.title
 
+  .wrap-alert
+    .alert.alert-success.hidden{role: 'alert'}
+      = t('list.saved')
+
   %ul#items
-    - f.fields_for :items do |item|
+    = f.fields_for :items do |item|
       = render 'item', :i => item
 
   = link_to(t('list.item.add'), '#', class: 'add-item')
@@ -15,7 +19,7 @@
     var list = new List('#{@list.id}');
 
     function createItem() {
-      var basic = "#{escape_javascript(render :partial => "lists/item", :locals => {:i => ActionView::Helpers::FormBuilder.new('__owner__[items_attributes][__index__]', Item.new(), self, {}, proc {})}) }";
+      var basic = "#{escape_javascript(render :partial => "lists/item", :locals => {:i => ActionView::Helpers::FormBuilder.new('__owner__[items_attributes][__index__]', Item.new(), self, {})}) }";
       var index = new Date() * 1 + parseInt(Math.random()*100000);
       while (basic.indexOf("__owner__") != -1) basic = basic.replace("__owner__", "list");
       while (basic.indexOf("__index__") != -1) basic = basic.replace("__index__", index);

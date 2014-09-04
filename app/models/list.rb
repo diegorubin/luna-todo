@@ -5,7 +5,6 @@ class List
   field :owner, type: Fixnum
 
   embeds_many :items
-  recursively_embeds_many 
 
   accepts_nested_attributes_for :items
 

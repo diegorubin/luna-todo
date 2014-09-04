@@ -92,3 +92,9 @@ body {
   }
 }
 
+/* lists */
+.wrap-alert {
+  width: 668px;
+  height: 70px;
+}
+

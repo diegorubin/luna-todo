@@ -8,5 +8,7 @@
     = link_to(list.title, list_path(list))
   = link_to(t('lists.edit'), 
       edit_list_path(list), class: 'open-overlay', 'data-overlay' => 'list')
+  = link_to(t('lists.remove'),
+      list_path(list), 'data-method' => 'delete', 'confirm' => 'Você tem certeza?')
 
 

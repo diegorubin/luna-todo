@@ -22,6 +22,8 @@ group :development do
   gem 'guard'
   gem 'guard-rspec'
 
+  gem 'debugger2'
+
   gem 'thin'
   gem 'capistrano'
   gem 'rspec-rails', '~> 2.0'

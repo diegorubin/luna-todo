@@ -20,6 +20,8 @@ class ListsController < ApplicationController
   end
 
   def destroy
+    @list.destroy
+    redirect_to action: 'index'
   end
 
   private
