@@ -7,6 +7,8 @@ class List
   embeds_many :items
   recursively_embeds_many 
 
+  accepts_nested_attributes_for :items
+
   # Validates
   validates_presence_of :title, :owner
 
