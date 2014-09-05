@@ -35,13 +35,14 @@ function List(id) {
 
     var service = new ApiServiceCall(url);
     service.success = function(result) {
-      if(result.status === 'ok') {
-        self.notifySuccess();
-      } else {
+      if(result === '') {
         alert('não foi possivel salvar');
+      } else {
+        $('#page-content').html(result);
+        self.notifySuccess();
       }
     };
-    service.submit({data: data, method: self.method});
+    service.submit({type: 'html', data: data, method: self.method});
   }
 
   // callbacks

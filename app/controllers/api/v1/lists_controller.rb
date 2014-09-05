@@ -18,10 +18,24 @@ class Api::V1::ListsController < ApiController
 
   def update
     list = List.where(owner: current_luna_user.id).find(params[:id])
-    if list.update(list_params)
-      render json: {status: 'ok', list: list}
-    else
-      render json: {status: 'error', list: list, errors: list.errors}
+
+    respond_to do |format|
+
+      format.json do 
+        if list.update(list_params)
+          render json: {status: 'ok', list: list}
+        else
+          render json: {status: 'error', list: list, errors: list.errors}
+        end
+      end
+
+      format.html do
+        if list.update(list_params)
+          render template: 'lists/show'
+        else
+          render text: ''
+        end
+      end
     end
   end
 
