@@ -17,21 +17,21 @@ class Api::V1::ListsController < ApiController
   end
 
   def update
-    list = List.where(owner: current_luna_user.id).find(params[:id])
+    @list = List.where(owner: current_luna_user.id).find(params[:id])
 
     respond_to do |format|
 
       format.json do 
-        if list.update(list_params)
-          render json: {status: 'ok', list: list}
+        if @list.update(list_params)
+          render json: {status: 'ok', list: @list}
         else
-          render json: {status: 'error', list: list, errors: list.errors}
+          render json: {status: 'error', list: @list, errors: @list.errors}
         end
       end
 
       format.html do
-        if list.update(list_params)
-          render template: 'lists/show'
+        if @list.update(list_params)
+          render partial: 'lists/list'
         else
           render text: ''
         end
@@ -41,7 +41,7 @@ class Api::V1::ListsController < ApiController
 
   private
   def list_params
-    params.require(:list).permit(:title, :items_attributes => ['description', 'done', 'id', 'position'])
+    params.require(:list).permit(:title, :items_attributes => ['description', 'done', 'id', 'position', '_destroy'])
   end
 
 end

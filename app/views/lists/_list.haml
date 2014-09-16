@@ -1,0 +1,10 @@
+= form_for [:api, :v1, @list] do |f|
+  %h1
+    = @list.title
+
+  %ul#items
+    = f.fields_for :items do |item|
+      = render 'lists/item', :i => item
+
+  = link_to(t('list.item.add'), '#', class: 'add-item btn btn-primary')
+

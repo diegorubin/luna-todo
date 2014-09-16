@@ -1,5 +1,9 @@
-%li
+%li.item-container
+  = i.check_box '_destroy', class: 'hidden destroy-item'
+
   = i.hidden_field :position, class: 'position'
   = i.check_box :done
-  = i.text_field :description
+  = i.text_field :description, class: 'item_description'
+
+  = link_to(t('list.item.remove'), '#', class: 'remove-item btn btn-danger hide')
 

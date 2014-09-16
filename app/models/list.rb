@@ -6,7 +6,7 @@ class List
 
   embeds_many :items
 
-  accepts_nested_attributes_for :items
+  accepts_nested_attributes_for :items, allow_destroy: true
 
   # Validates
   validates_presence_of :title, :owner

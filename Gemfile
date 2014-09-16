@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Core
 gem 'rails', '4.0.2'
-gem 'mysql2'
 gem 'devise'
 gem 'luna', :git => 'ssh://git@github.com/diegorubin/luna-key.git'
 

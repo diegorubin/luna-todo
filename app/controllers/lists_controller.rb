@@ -8,6 +8,9 @@ class ListsController < ApplicationController
   end
 
   def show
+    if params[:content]
+      render partial: 'list'
+    end
   end
 
   def new

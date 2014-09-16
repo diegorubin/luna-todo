@@ -94,7 +94,10 @@ body {
 
 /* lists */
 .wrap-alert {
-  width: 668px;
   height: 70px;
+}
+
+.item_description {
+  width: 450px;
 }
 

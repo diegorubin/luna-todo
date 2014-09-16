@@ -1,17 +1,5 @@
 
-= form_for [:api, :v1, @list] do |f|
-  %h1
-    = @list.title
-
-  .wrap-alert
-    .alert.alert-success.hidden{role: 'alert'}
-      = t('list.saved')
-
-  %ul#items
-    = f.fields_for :items do |item|
-      = render 'item', :i => item
-
-  = link_to(t('list.item.add'), '#', class: 'add-item')
+= render partial: 'list'
 
 - content_for :javascripts do
   :javascript
