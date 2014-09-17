@@ -69,7 +69,9 @@ function List(id) {
     service.submit({type: 'html', data: data, method: self.getMethod()});
   };
 
-  self.destroy = function() {
+  self.destroy = function(event) {
+    event.preventDefault();
+
     var li = $(this).parent();
     li.find(".destroy-item").attr('checked', 'checked');
     self.save();
