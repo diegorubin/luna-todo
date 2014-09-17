@@ -6,10 +6,19 @@ class List
 
   embeds_many :items
 
-  accepts_nested_attributes_for :items, allow_destroy: true
+  accepts_nested_attributes_for :items, allow_destroy: true, 
+    reject_if: proc { |attributes| attributes['description'].blank? }
 
   # Validates
   validates_presence_of :title, :owner
+
+  def todo_items
+    @todo_items ||= items.where(done: false)
+  end
+
+  def done_items
+    @done_items ||= items.where(done: true)
+  end
 
 end
 

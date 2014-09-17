@@ -1,0 +1,16 @@
+pt-BR:
+
+  confirm: Você tem certeza?
+
+  list:
+    item:
+      add: Adicionar Item
+      done: Itens Prontos
+      remove: Remover
+      todo: Itens Para Fazer
+
+  lists:
+    edit: Editar
+    new: Nova
+    remove: Remover
+

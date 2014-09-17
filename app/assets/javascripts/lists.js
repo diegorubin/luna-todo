@@ -11,16 +11,27 @@ function List(id) {
 
   self.addItem = function(event) {
     event.preventDefault();
-    var newItem = createItem();
 
-    $("#items").append(newItem);
+    var newItem = createItem();
+    $(".todo-items").append(newItem);
+
+    newItem.find('span.item-description').addClass('hide');
+    newItem.find('.item-description-field').removeClass('hide');
 
     self.updatePositions();
   };
 
+  self.editItem = function(event) {
+    var field = $(this).parent().find('.item-description-field');
+
+    $(this).addClass('hide');
+    field.removeClass('hide');
+    field.focus();
+  };
+
   self.updatePositions = function() {
 
-    var items = $("#items li");
+    var items = $(".items li");
     for(var i = 0; i < items.length; i++) {
       var li = $(items[i]);
       li.find('input.position').val(i);
@@ -66,9 +77,11 @@ function List(id) {
 
   // callbacks
   $('#page-content').on('click', '.add-item', self.addItem);
+  $('#page-content').on('click', '.item-description', self.editItem);
 
   // callbacks - save
   $("#page-content").on('blur', "input[type='text']", self.save);
+  $('#page-content').on('click', '.item-done-field', self.save);
 
   // callbacks - destroy
   $('#page-content').on(

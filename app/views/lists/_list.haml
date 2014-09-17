@@ -2,9 +2,18 @@
   %h1
     = @list.title
 
-  %ul#items
-    = f.fields_for :items do |item|
+  %ul.items.todo-items
+    %h2= t('list.item.todo')
+    = f.fields_for :items, @list.todo_items do |item|
       = render 'lists/item', :i => item
+
+  %ul.items.done-items
+    - if @list.done_items.count > 0
+      %h2= t('list.item.done')
+
+      = f.fields_for :items, @list.done_items do |item|
+        = render 'lists/item', :i => item
+
 
   = link_to(t('list.item.add'), '#', class: 'add-item btn btn-primary')
 

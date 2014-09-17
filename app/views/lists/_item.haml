@@ -2,8 +2,10 @@
   = i.check_box '_destroy', class: 'hidden destroy-item'
 
   = i.hidden_field :position, class: 'position'
-  = i.check_box :done
-  = i.text_field :description, class: 'item_description'
+  = i.check_box :done, class: 'item-done-field'
+
+  %span.item-description= i.object.description
+  = i.text_field :description, class: 'item-description item-description-field hide'
 
   = link_to(t('list.item.remove'), '#', class: 'remove-item btn btn-danger hide')
 

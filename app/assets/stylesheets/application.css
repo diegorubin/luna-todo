@@ -92,12 +92,19 @@ body {
   }
 }
 
-/* lists */
+/* global elements*/
 .wrap-alert {
-  height: 70px;
+  width: 700px;
 }
 
-.item_description {
+/* lists */
+.item-description {
   width: 450px;
+  display: inline-block;
+}
+
+.item-container {
+  height: 60px;
+  vertical-align: middle;
 }
 

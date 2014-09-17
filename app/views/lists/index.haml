@@ -7,8 +7,8 @@
   %h2
     = link_to(list.title, list_path(list))
   = link_to(t('lists.edit'), 
-      edit_list_path(list), class: 'open-overlay', 'data-overlay' => 'list')
+      edit_list_path(list), class: 'open-overlay btn btn-default', 'data-overlay' => 'list')
   = link_to(t('lists.remove'),
-      list_path(list), 'data-method' => 'delete', 'confirm' => 'Você tem certeza?')
+      list_path(list), class: 'btn btn-danger', 'data-method' => 'delete', 'confirm' => t('confirm'))
 
 
