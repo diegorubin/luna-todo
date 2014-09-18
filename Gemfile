@@ -25,6 +25,7 @@ group :development do
 
   gem 'thin'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'rspec-rails', '~> 2.0'
   gem 'simplecov', '0.7.1'
   gem 'simplecov-rcov'

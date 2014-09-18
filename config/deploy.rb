@@ -4,6 +4,9 @@ lock '3.2.1'
 set :application, 'luna-todo'
 set :repo_url, 'git@github.com:diegorubin/luna-todo.git'
 
+set :rvm_type, :auto
+set :rvm_ruby_version, '2.1@independent'
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
