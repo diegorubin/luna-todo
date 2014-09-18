@@ -3,16 +3,5 @@
 
 - content_for :javascripts do
   :javascript
-
     var list = new List('#{@list.id}');
-
-    function createItem() {
-      var basic = "#{escape_javascript(render :partial => "lists/item", :locals => {:i => ActionView::Helpers::FormBuilder.new('__owner__[items_attributes][__index__]', Item.new(), self, {})}) }";
-      var index = new Date() * 1 + parseInt(Math.random()*100000);
-      while (basic.indexOf("__owner__") != -1) basic = basic.replace("__owner__", "list");
-      while (basic.indexOf("__index__") != -1) basic = basic.replace("__index__", index);
-
-      return basic;
-    } 
-
 

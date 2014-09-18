@@ -2,18 +2,17 @@
   %h1
     = @list.title
 
+  = f.fields_for :items, [Item.new] do |item|
+    = item.label :description
+    = item.text_field :description, class: 'item-description item-description-field'
+
   %ul.items.todo-items
-    %h2= t('list.item.todo')
     = f.fields_for :items, @list.todo_items do |item|
-      = render 'lists/item', :i => item
+      = render 'lists/item', i: item
 
-  %ul.items.done-items
-    - if @list.done_items.count > 0
-      %h2= t('list.item.done')
-
+  - if @list.done_items.count > 0
+    %h2= t('list.item.done')
+    %ul.items.done-items
       = f.fields_for :items, @list.done_items do |item|
-        = render 'lists/item', :i => item
-
-
-  = link_to(t('list.item.add'), '#', class: 'add-item btn btn-primary')
+        = render 'lists/item', i: item
 

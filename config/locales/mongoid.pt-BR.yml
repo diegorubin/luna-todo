@@ -1,0 +1,11 @@
+pt-BR:
+
+  mongoid:
+    attributes:
+
+      item:
+        description: Descrição
+
+      list:
+        title: Título
+

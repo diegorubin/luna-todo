@@ -4,8 +4,8 @@
   = i.hidden_field :position, class: 'position'
   = i.check_box :done, class: 'item-done-field'
 
-  %span.item-description= i.object.description
+  %span.item-description.item-description-label= i.object.description
   = i.text_field :description, class: 'item-description item-description-field hide'
 
-  = link_to(t('list.item.remove'), '#', class: 'remove-item btn btn-danger hide')
+  = link_to(t('list.item.remove'), '#', class: 'remove-item btn btn-danger pull-right hide')
 

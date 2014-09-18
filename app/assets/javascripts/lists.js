@@ -9,18 +9,6 @@ function List(id) {
     return self.getForm().find("input[name='_method']").val() || 'post';
   }
 
-  self.addItem = function(event) {
-    event.preventDefault();
-
-    var newItem = createItem();
-    $(".todo-items").append(newItem);
-
-    newItem.find('span.item-description').addClass('hide');
-    newItem.find('.item-description-field').removeClass('hide');
-
-    self.updatePositions();
-  };
-
   self.editItem = function(event) {
     var field = $(this).parent().find('.item-description-field');
 
@@ -37,6 +25,7 @@ function List(id) {
       li.find('input.position').val(i);
     }
 
+    self.save();
   };
 
   self.notifySuccess = function() {
@@ -45,15 +34,9 @@ function List(id) {
     $('.alert-success').fadeOut(2000);
   };
 
-  self.updateForm = function() {
-    var service = new ApiServiceCall(window.location);
-    service.success = function(result) {
+  self.save = function(event) {
+    if(event && event.keyCode != undefined && event.keyCode != 13) return true;
 
-    };
-    service.submit({type: 'html', data: data, method: 'GET'});
-  };
-
-  self.save = function() {
     var url = self.getForm().attr('action');
     data = get_attributes_in_form(self.getForm());
 
@@ -64,6 +47,7 @@ function List(id) {
       } else {
         $('#page-content').html(result);
         self.notifySuccess();
+        self.reload();
       }
     };
     service.submit({type: 'html', data: data, method: self.getMethod()});
@@ -77,11 +61,16 @@ function List(id) {
     self.save();
   };
 
+  self.reload = function() {
+    // sortable
+    $(".todo-items").sortable({stop: self.updatePositions});
+  };
+
   // callbacks
-  $('#page-content').on('click', '.add-item', self.addItem);
-  $('#page-content').on('click', '.item-description', self.editItem);
+  $('#page-content').on('click', '.item-description-label', self.editItem);
 
   // callbacks - save
+  $("#page-content").on('keypress', "input[type='text']", self.save);
   $("#page-content").on('blur', "input[type='text']", self.save);
   $('#page-content').on('click', '.item-done-field', self.save);
 
@@ -93,5 +82,7 @@ function List(id) {
     'mouseleave', '.item-container', function(){$(this).find('a').addClass('hide')});
 
   $("#page-content").on('click', ".remove-item", self.destroy);
+
+  self.reload();
 }
 

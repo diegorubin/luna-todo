@@ -13,11 +13,11 @@ class List
   validates_presence_of :title, :owner
 
   def todo_items
-    @todo_items ||= items.where(done: false)
+    @todo_items ||= items.where(done: false).order('position ASC')
   end
 
   def done_items
-    @done_items ||= items.where(done: true)
+    @done_items ||= items.where(done: true).order('description ASC')
   end
 
 end
