@@ -24,7 +24,7 @@ group :development do
   gem 'debugger2'
 
   gem 'thin'
-  gem 'capistrano'
+  gem 'capistrano-rails'
   gem 'rspec-rails', '~> 2.0'
   gem 'simplecov', '0.7.1'
   gem 'simplecov-rcov'
