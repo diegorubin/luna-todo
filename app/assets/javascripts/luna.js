@@ -1,7 +1,7 @@
 $(function() {
 
-  $(document).on('click', '.open-overlay', function(e) {
-    e.preventDefault();
+  $(document).on('click', '.open-overlay', function(event) {
+    event.preventDefault();
 
     var url = $(this).attr("href");
     var overlay = '#' + $(this).attr("data-overlay");
@@ -10,8 +10,8 @@ $(function() {
 
   });
 
-  $(document).on('click', '.submit-api-form', function(e) {
-    e.preventDefault();
+  $(document).on('click', '.submit-api-form', function(event) {
+    event.preventDefault();
 
     var form = new ResourceForm($(this));
     form.submit();
@@ -20,11 +20,11 @@ $(function() {
 
   $(document).on('keypress', "form input[type='text']", function(event) {
     if(event && event.keyCode == 13) {
-      var button = $(this).closest('form').find('.submit-api-form');
-      if(button) button.click();
-      event.stopPropagation();
+      event.preventDefault();
+
+      var form = new ResourceForm($(this).closest('form').find('.submit-api-form'));
+      form.submit();
     }
-    return true;
   });
 
 });
