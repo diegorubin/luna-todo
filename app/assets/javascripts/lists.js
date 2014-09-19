@@ -36,6 +36,10 @@ function List(id) {
 
   self.save = function(event) {
     if(event && event.keyCode != undefined && event.keyCode != 13) return true;
+    if(event && event.keyCode == 13) { 
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
     var url = self.getForm().attr('action');
     data = get_attributes_in_form(self.getForm());

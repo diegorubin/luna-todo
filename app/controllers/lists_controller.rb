@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   before_filter :get_list, only: ['show', 'edit', 'destroy']
 
   def index
-    @lists = List.where(owner: current_luna_user.id)
+    @lists = List.where(owner: current_luna_user.id).order('title ASC')
   end
 
   def show
