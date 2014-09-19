@@ -18,6 +18,15 @@ $(function() {
 
   });
 
+  $(document).on('keypress', "form input[type='text']", function(event) {
+    if(event && event.keyCode == 13) {
+      var button = $(this).closest('form').find('.submit-api-form');
+      if(button) button.click();
+      event.stopPropagation();
+    }
+    return true;
+  });
+
 });
 
 function list_errors_in_page(errors, div) {

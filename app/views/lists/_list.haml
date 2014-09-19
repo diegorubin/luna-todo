@@ -4,7 +4,7 @@
 
   = f.fields_for :items, [Item.new] do |item|
     = item.label :description
-    = item.text_field :description, class: 'item-description item-description-field'
+    = item.text_field :description, class: 'item-description item-description-field item-description-field-static'
 
   %ul.items.todo-items
     = f.fields_for :items, @list.todo_items do |item|

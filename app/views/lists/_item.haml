@@ -5,7 +5,7 @@
   = i.check_box :done, class: 'item-done-field'
 
   %span.item-description.item-description-label{'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => i.object.description}= i.object.description
-  = i.text_field :description, class: 'item-description item-description-field hide'
+  = i.text_field :description, class: 'item-description item-description-field item-description-field-edit hide'
 
   = link_to(t('list.item.remove'), '#', class: 'remove-item btn btn-danger pull-right hide')
 

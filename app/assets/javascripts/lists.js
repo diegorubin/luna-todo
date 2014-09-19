@@ -70,8 +70,9 @@ function List(id) {
   $('#page-content').on('click', '.item-description-label', self.editItem);
 
   // callbacks - save
-  $("#page-content").on('keypress', "input[type='text']", self.save);
-  $("#page-content").on('blur', "input[type='text']", self.save);
+  $("#page-content").on('keypress', ".item-description-field-static", self.save);
+  $("#page-content").on('keypress', ".item-description-field-edit", self.save);
+  $("#page-content").on('blur', ".item-description-field-edit", self.save);
   $('#page-content').on('click', '.item-done-field', self.save);
 
   // callbacks - destroy
