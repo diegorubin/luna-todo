@@ -3,7 +3,7 @@ LunaToDo::Application.routes.draw do
   # Luna
   get '/open', to: 'application_sessions#new', as: 'open_session'
   post '/open', to: 'application_sessions#create'
-  delete '/open', to: 'application_sessions#destroy'
+  delete '/open', to: 'application_sessions#destroy', as: 'close_session'
 
   # Lists
   resources :lists

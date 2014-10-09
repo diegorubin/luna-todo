@@ -1,6 +1,6 @@
 GIT
   remote: ssh://git@github.com/diegorubin/luna-key.git
-  revision: 1d192474e6896c709588837cbc4f83bcd4e94f98
+  revision: ebe944c1634cc52f8adc2c0299e88f4fe8ea1c44
   specs:
     luna (0.0.1.1)
       faraday_middleware

@@ -23,8 +23,10 @@
         %ul.nav.nav-pills.pull-right
           %li
             %a{:href => "/lists"} Listas
-          %li.active
+          %li
             %a.open-overlay{:href => "/lists/new", 'data-overlay' => 'list'} Nova Lista
+          %li
+            = link_to "Sair", close_session_path, {data: {method: 'delete', confirm: t('confirm')}}
         %h3.text-muted Luna To Do
         .wrap-alert.pull-right
           .alert.alert-success.hidden{role: 'alert'}
